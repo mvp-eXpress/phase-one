@@ -63,7 +63,7 @@ plugins = ["grpc"]
 # supported.
 #
 # This can be used to use a different plugin set for a given package.
-[[overrides]]
+# [[overrides]]
 
 # Prefix specifies the protobuf import path to which the configuration
 # overrides apply.
@@ -74,13 +74,13 @@ plugins = ["grpc"]
 # For this example, if there were a package that needed this overrides applied,
 # you would need to specify that explicitly in the prefixes list. This allows
 # one to granularly select which packages have the overrides.
-prefixes = ["github.com/stevvooe/protobuild/examples/nogrpc"]
+# prefixes = ["github.com/stevvooe/protobuild/examples/nogrpc"]
 
 # Generator allows one to override the generator for the given prefix.
 # generator = ""
 
 # Plugins will override the entire plugin set for the specified prefix.
-plugins = []
+# plugins = []
 
 # Descriptors allows you to aggregate generated protobuf descriptors under a
 # particular Go import path into a single, de-duplicated file. The result of
@@ -114,10 +114,10 @@ plugins = []
 #
 # The example below stablizes the protobufs under the examples directory. The
 # generated descriptor file will include both the "foo" and "bar" subpackages.
-prefix = "github.com/stevvooe/protobuild/examples"
+prefix = "/Users/rohanray/go/src/github.com/mvp-eXpress/phase-one/dao-grpc"
 
 # Target defines the output location of the merged descriptor file.
-target = "examples/next.pb.txt"
+target = "dao-grpc/todo.pb.txt"
 
 # Ignore files by their protobuf import path.
 #
