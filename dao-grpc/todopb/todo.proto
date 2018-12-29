@@ -1,0 +1,80 @@
+syntax = "proto3";
+
+package todo.v1;
+
+option go_package = "todo";
+
+service TodoService {
+	rpc CreateTodo(CreateTodoRequest) returns (CreateTodoResponse) {}
+
+	rpc CreateTodos(CreateTodosRequest) returns (CreateTodosResponse) {}
+
+	rpc GetTodo(GetTodoRequest) returns (GetTodoResponse) {}
+
+	rpc ListTodo(ListTodoRequest) returns (ListTodoResponse) {}
+
+	rpc DeleteTodo(DeleteTodoRequest) returns (DeleteTodoResponse) {}
+
+	rpc UpdateTodo(UpdateTodoRequest) returns (UpdateTodoResponse) {}
+
+	rpc UpdateTodos(UpdateTodosRequest) returns (UpdateTodosResponse) {}
+}
+
+message Todo {
+	string id = 1;
+	string title = 2;
+	string description = 3;
+	bool completed = 4;
+	Todo children = 5;
+}
+
+message CreateTodoRequest {
+	Todo item = 1;
+}
+
+message CreateTodoResponse {
+	string id = 1;
+}
+
+message CreateTodosRequest {
+	repeated Todo items = 1;
+}
+
+message CreateTodosResponse {
+	repeated string ids = 1;
+}
+
+message GetTodoRequest {
+	string id = 1;
+}
+
+message GetTodoResponse {
+	Todo item = 1;
+}
+
+message ListTodoRequest {
+	int32 limit = 1;
+	bool not_completed = 2;
+}
+
+message ListTodoResponse {
+	repeated Todo items = 1;
+}
+
+message DeleteTodoRequest {
+	string id = 1;
+}
+
+message DeleteTodoResponse {}
+
+message UpdateTodoRequest {
+	Todo item = 1;
+}
+
+message UpdateTodoResponse {}
+
+message UpdateTodosRequest {
+	repeated Todo items = 1;
+}
+
+message UpdateTodosResponse {}
