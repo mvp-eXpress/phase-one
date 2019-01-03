@@ -6,6 +6,10 @@
   branch = "master"
   name = "github.com/golang/protobuf"
 
+[[constraint]]
+  branch = "master"
+  name = "github.com/favadi/protoc-go-inject-tag"
+
 [prune]
   go-tests = true
   unused-packages = true
