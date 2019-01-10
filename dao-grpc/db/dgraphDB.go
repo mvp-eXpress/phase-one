@@ -1,4 +1,4 @@
-package todo
+package db
 
 // type DB interface {
 // 	CreateTodo(ctx context.Context, todo NewTodoInput) (*Todo, error)
