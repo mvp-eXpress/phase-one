@@ -2,6 +2,7 @@ package todo
 
 import (
 	"context"
+	"fmt"
 )
 
 type IService interface {
@@ -31,7 +32,7 @@ func NewService(r IRepo) IService {
 }
 
 func (s *TodoService) CreateTodo(ctx context.Context, n *NewTodoInput) (*Todo, error) {
-
+	fmt.Printf("CreateTodo Service: %v", n)
 	t, err := s.r.CreateTodo(ctx, n)
 	if err != nil {
 		return nil, err
@@ -43,4 +44,5 @@ func (s *TodoService) CreateTodo(ctx context.Context, n *NewTodoInput) (*Todo, e
 type NewTodoInput struct {
 	Title       string `json:"title"`
 	Description string `json:"description"`
+	Completed   bool   `json:"completed"`
 }

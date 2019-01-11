@@ -34,6 +34,7 @@ func (s *grpcServer) CreateTodo(ctx context.Context, req *todopb.CreateTodoReque
 	todoItem := NewTodoInput{
 		Title:       req.Item.Title,
 		Description: req.Item.Description,
+		Completed:   req.Item.Completed,
 	}
 
 	a, err := s.service.CreateTodo(ctx, &todoItem)

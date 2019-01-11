@@ -28,8 +28,8 @@ func doCreateTodo(c todopb.TodoServiceClient) {
 	fmt.Println("Starting createtodo rpc...")
 	req := &todopb.CreateTodoRequest{
 		Item: &todopb.NewTodoRequest{
-			Title:       "3 yo yo title",
-			Description: "3 as;hdha; sdesc",
+			Title:       "bbbb",
+			Description: "bbbb",
 		},
 	}
 

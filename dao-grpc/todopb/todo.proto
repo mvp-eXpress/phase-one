@@ -37,6 +37,7 @@ message Todo {
 message NewTodoRequest {
   string title = 1;
   string description = 2;
+  bool completed = 3;
 }
 
 message CreateTodoRequest { NewTodoRequest item = 1; }
